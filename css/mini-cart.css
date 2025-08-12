@@ -1,0 +1,335 @@
+/* Overlay del mini-carrito */
+.mini-cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    z-index: 1050; /* Mayor que el sidebar normal */
+    display: none; /* Oculto por defecto */
+}
+
+.mini-cart-overlay.is-open {
+    display: block;
+}
+
+/* Sidebar del mini-carrito */
+.mini-cart-sidebar {
+    width: 400px; /* Ancho del mini-carrito */
+    max-width: 90%; /* Para pantallas pequeñas */
+    position: fixed;
+    top: 0;
+    right: 0; /* Aparece desde la derecha */
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.4); /* Sombra hacia la izquierda */
+    z-index: 1060; /* Mayor que el overlay */
+    transform: translateX(100%); /* Oculto por defecto (fuera de pantalla a la derecha) */
+    transition: transform 0.4s ease-in-out; /* Animación de deslizamiento */
+    display: flex;
+    flex-direction: column;
+    visibility: hidden; /* Oculto para lectores de pantalla cuando está cerrado */
+}
+
+.mini-cart-sidebar.is-open { /* Clase añadida por JS para mostrarlo */
+    transform: translateX(0); /* Desliza a la vista */
+    visibility: visible;
+}
+
+/* Cabecera del mini-carrito */
+.mini-cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #eee;
+    background-color: #f8f8f8; /* Fondo ligeramente gris */
+}
+
+.mini-cart-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.mini-cart-close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 0; /* Asegurar que no tenga padding extra */
+    line-height: 1; /* Alinear el ícono X */
+}
+
+.mini-cart-close-btn:hover {
+    color: #333;
+}
+
+/* Lista de ítems del carrito */
+.mini-cart-items {
+    flex-grow: 1; /* Permite que ocupe el espacio disponible */
+    overflow-y: auto; /* Scroll si hay muchos ítems */
+    padding: 20px 25px;
+    background-color: #fff;
+}
+
+/* Estilo para cada ítem del carrito */
+.cart-item {
+    display: flex;
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    padding: 15px 0;
+    border-bottom: 1px dashed #eee; /* Línea de puntos como en la imagen */
+    position: relative; /* Para el botón de eliminar */
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* Último ítem no tiene borde */
+}
+
+.cart-item img {
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+.cart-item .item-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.cart-item .item-name {
+    font-weight: bold;
+    color: #007bff; /* Nombre del producto azul */
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.cart-item .item-model {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.cart-item .item-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permitir que los elementos salten de línea si es necesario */
+    gap: 15px; /* Espacio entre elementos */
+    margin-top: 10px;
+}
+
+/* Control de cantidad */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.quantity-control button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #555;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0; /* Evita que los botones se encojan */
+}
+
+.quantity-control button:hover {
+    background-color: #e0e0e0;
+}
+
+.quantity-control .item-quantity {
+    padding: 5px 10px;
+    min-width: 25px; /* Ancho mínimo para el número */
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+/* Precios de ítem */
+.item-price-original {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.85rem;
+    margin-left: auto; /* Empuja los precios a la derecha si hay espacio */
+    white-space: nowrap;
+}
+
+.item-price-current {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+/* Botón de eliminar ítem */
+.item-delete-btn {
+    background: none;
+    border: none;
+    color: #888; /* Color gris */
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute; /* Posicionamiento absoluto para el icono de la papelera */
+    top: 15px; /* Ajusta la posición vertical */
+    right: 0; /* Ajusta la posición horizontal */
+    padding: 0; /* Asegurar que no tenga padding extra */
+    transition: color 0.2s ease;
+}
+
+.item-delete-btn:hover {
+    color: #dc3545; /* Rojo al pasar el ratón */
+}
+
+/* Etiqueta de descuento de cupón */
+.discount-coupon-tag {
+    background-color: #00bcd4; /* Color azul claro/cian como en la imagen */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 10px;
+    align-self: flex-start; /* Alineado a la izquierda del item-details */
+}
+
+
+/* Resumen del carrito */
+.mini-cart-summary {
+    background-color: #f0f2f5; /* Fondo ligeramente gris */
+    padding: 20px 25px;
+    border-top: 1px solid #eee;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 1rem;
+}
+
+.summary-line span:first-child {
+    font-weight: normal;
+}
+
+.summary-line span:last-child {
+    font-weight: bold;
+    color: #333;
+}
+
+.summary-line.total-line {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* Pie de página del mini-carrito (botones) */
+.mini-cart-footer {
+    padding: 20px 25px;
+    background-color: #f8f8f8; /* Fondo ligeramente gris */
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mini-cart-footer .btn-checkout {
+    background-color: #007bff; /* Azul primario */
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.mini-cart-footer .btn-checkout:hover {
+    background-color: #0056b3;
+}
+
+.mini-cart-footer .btn-view-cart {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    color: #333;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+}
+
+.mini-cart-footer .btn-view-cart:hover {
+    background-color: #e0e0e0;
+    border-color: #bbb;
+    color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .mini-cart-sidebar {
+        width: 100%; /* Ocupa todo el ancho en móviles muy pequeños */
+    }
+    .mini-cart-header,
+    .mini-cart-items,
+    .mini-cart-summary,
+    .mini-cart-footer {
+        padding: 15px 20px; /* Reducir padding en móviles */
+    }
+    .cart-item {
+        flex-direction: column; /* Apilar imagen y detalles */
+        align-items: center; /* Centrar ítems apilados */
+        text-align: center;
+    }
+    .cart-item img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .cart-item .item-details {
+        align-items: center; /* Centrar detalles de ítem */
+    }
+    .cart-item .item-actions {
+        flex-wrap: wrap; /* Envolver elementos de acción */
+        gap: 10px;
+        justify-content: center; /* Centrar acciones */
+        width: 100%; /* Ocupar todo el ancho disponible */
+    }
+    .item-price-original,
+    .item-price-current {
+        margin-left: 0; /* Eliminar margen para que no se peguen a la derecha */
+        width: auto; /* Permitir que el precio ocupe el espacio necesario */
+    }
+    .item-delete-btn {
+        top: 5px; /* Ajustar posición del botón de eliminar */
+        right: 5px;
+    }
+    .discount-coupon-tag {
+        width: calc(100% - 20px); /* Ajustar ancho del cupón */
+        text-align: center;
+        padding: 8px 10px;
+    }
+} 

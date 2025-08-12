@@ -1,0 +1,197 @@
+.credito-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.credito-container h1 {
+    color: #333;
+    margin-bottom: 2.5rem;
+    font-size: 2.8rem;
+}
+
+.opciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.opcion-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px; /* Asegura un tamaño mínimo para las tarjetas */
+}
+
+.opcion-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.opcion-card i {
+    color: #007bff; /* Color azul de Bootstrap para los iconos */
+    margin-bottom: 1.5rem;
+    font-size: 3.5rem; /* Iconos más grandes */
+}
+
+.opcion-card h3 {
+    color: #333;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.opcion-card p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .opciones-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .credito-container h1 {
+        font-size: 2rem;
+    }
+
+    .opcion-card i {
+        font-size: 3rem;
+    }
+
+    .opcion-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .opcion-card p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .opciones-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Contenedor principal de la página de crédito */
+.credito-bytestore-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 30px;
+    background-color: #222; /* Fondo oscuro, similar al header */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para el contenedor */
+    color: #ffffff; /* Color de texto blanco para el título y descripción */
+}
+
+.credito-bytestore-container h1 {
+    text-align: center;
+    color: #ffffff; /* Título blanco */
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.credito-bytestore-container p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ccc; /* Texto gris claro para la descripción */
+    font-size: 1.1rem;
+}
+
+/* Estilos para el formulario dentro de credito-bytestore.html */
+.credit-form .form-group {
+    margin-bottom: 20px;
+}
+
+.credit-form label {
+    display: block; /* Asegura que la etiqueta esté en su propia línea */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #eee; /* Color para las etiquetas */
+}
+
+/* Reutilizando los estilos de input y button de styles.css */
+/* Asegúrate de que styles.css esté cargado antes que credito-bytestore.css */
+.credit-form input[type="text"],
+.credit-form input[type="email"],
+.credit-form input[type="tel"],
+.credit-form input[type="number"],
+.credit-form textarea,
+.credit-form select {
+    width: calc(100% - 30px); /* Ajuste por el padding */
+    padding: 12px 15px;
+    border: 1px solid #555; /* Borde más oscuro para los inputs */
+    border-radius: 25px; /* Esquinas redondeadas */
+    background-color: #444; /* Fondo oscuro para los inputs */
+    color: #ffffff; /* Texto blanco en los inputs */
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.credit-form input[type="text"]:focus,
+.credit-form input[type="email"]:focus,
+.credit-form input[type="tel"]:focus,
+.credit-form input[type="number"]:focus,
+.credit-form textarea:focus,
+.credit-form select:focus {
+    border-color: #007bff; /* Borde azul al enfocar */
+    background-color: #3a3a3a; /* Un poco más oscuro al enfocar */
+    outline: none;
+}
+
+.credit-form input::placeholder,
+.credit-form textarea::placeholder {
+    color: #aaa; /* Color de placeholder más claro en fondo oscuro */
+}
+
+.credit-form button[type="submit"] {
+    background-color: #007bff; /* Fondo azul para el botón de enviar */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: block; /* Hace que el botón ocupe todo el ancho disponible */
+    width: 100%;
+    margin-top: 20px;
+}
+
+.credit-form button[type="submit"]:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .credito-bytestore-container {
+        margin: 1rem;
+        padding: 20px;
+    }
+
+    .credito-bytestore-container h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .credito-bytestore-container {
+        padding: 15px;
+    }
+} 

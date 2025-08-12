@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Suministros Dayana</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/filter-bar.css">
+    <link rel="stylesheet" href="css/mini-cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <!-- Barra superior (descuento, estado de orden, soporte, iniciar sesión) -->
+        <div class="header-top-bar">
+            <div class="container">
+                <span class="discount-message">Hasta L10,000 de descuento en tu nuevo smart TV. Compra 👉 <a href="#" class="here-link">aquí.</a></span>
+                <div class="top-links">
+                    <a href="#">Estado de Orden</a>
+                    <a href="#">Soporte</a>
+                    <a href="login.html" class="login-settings">Iniciar Sesión <i class="fas fa-cog"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección principal del header (logo, buscador, íconos de usuario) -->
+        <div class="header-main-section">
+            <div class="container main-content">
+                <div class="logo">
+                    <a href="index.html">BYTE STORE</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-actions">
+                    <a href="login.html" class="action-item">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                    <a href="favotitos.html" class="action-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Favoritos</span>
+                    </a>
+                    <a href="carrito.html" class="action-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Carrito</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de navegación principal (INICIO, MARCAS, PRODUCTOS, etc.) -->
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="marcas.html">MARCAS</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li> <!-- Enlace a esta página -->
+                    <li><a href="exclusivos-online.html">EXCLUSIVOS ONLINE</a></li>
+                    <li><a href="credito-bytestore.html">CRÉDITO BYTE STORE</a></li>
+                    <li><a href="servicio-tecnico.html">SERVICIO TÉCNICO</a></li>
+                    <li><a href="ubicacion.html">UBICACIÓN</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Sección "Explorar Categorías" -->
+        <div class="explore-categories-section">
+            <button class="explore-categories-btn">
+                <i class="fas fa-bars"></i> Explorar Categorías
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- START: Barra de Filtros y Ordenamiento -->
+        <div class="filter-sort-section">
+            <div class="container filter-header">
+                <h2>Filtrar y Ordenar Productos</h2>
+                <button class="toggle-filters-btn">
+                    <i class="fas fa-filter"></i> Mostrar Filtros
+                </button>
+            </div>
+            <div class="container filter-options-container" id="filterOptionsContainer">
+                <div class="filter-group">
+                    <label for="category-filter">Categoría:</label>
+                    <select id="category-filter">
+                        <option value="">Todas</option>
+                        <option value="Computadoras">Computadoras</option>
+                        <option value="componentes">Componentes Internos</option>
+                        <option value="perifericos">Periféricos</option>
+                        <option value="accesorios">Accesorios</option>
+                        <option value="software">Software</option>
+                        <option value="suministros-oficina">Suministros de Oficina</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="conectividad">Conectividad</option>
+                        <option value="almacenamiento">Almacenamiento</option>
+                        <option value="Soporte">Soporte</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="brand-filter">Marca:</label>
+                    <select id="brand-filter">
+                        <option value="">Todas</option>
+                        <option value="hisense">Hisense</option>
+                        <option value="intel">Intel</option>
+                        <option value="hyperx">HyperX</option>
+                        <option value="sony">Sony</option>
+                        <option value="microsoft">Microsoft</option>
+                        <option value="epson">Epson</option>
+                        <option value="hp">HP</option>
+                        <option value="corsair">Corsair</option>
+                        <option value="samsung">Samsung</option>
+                        <option value="asus">ASUS</option>
+                        <option value="evga">EVGA</option>
+                        <option value="cooler-master">Cooler Master</option>
+                        <option value="acer">Acer</option>
+                        <option value="logitech">Logitech</option>
+                        <option value="tp-link">TP-Link</option>
+                        <option value="seagate">Seagate</option>
+                        <option value="gigabyte">Gigabyte</option>
+                        <option value="amd">AMD</option>
+                        <option value="sapphire">Sapphire</option>
+                        <option value="g-skill">G.Skill</option>
+                        <option value="ergotech">Ergotech</option>
+                        <option value="norton">Norton</option>
+                        <option value="techtools">TechTools</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-by">Ordenar por:</label>
+                    <select id="sort-by">
+                        <option value="default">Relevancia</option>
+                        <option value="price-asc">Precio: Menor a Mayor</option>
+                        <option value="price-desc">Precio: Mayor a Menor</option>
+                        <option value="name-asc">Nombre: A-Z</option>
+                        <option value="name-desc">Nombre: Z-A</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <button class="apply-filters-btn">Aplicar Filtros</button>
+                </div>
+            </div>
+        </div>
+        <!-- END: Barra de Filtros y Ordenamiento -->
+
+        <div class="products-page-container">
+            <h1>Nuestros Productos</h1>
+            <p class="page-intro">Explora nuestra amplia selección de productos de tecnología. ¡Encuentra lo que necesitas al mejor precio!</p>
+
+            <div class="products-grid">
+
+                <!-- EJEMPLO DE PRODUCTO CORRECTO: Smart TV Hisense -->
+                <div class="product-card"
+                    data-id="p001"
+                    data-name="Laptop Hp 16G RAM 522 Disco Duro"
+                    data-price="4495.00"
+                    data-old-price="5995.00"
+                    data-discount="1500.00"
+                    data-image="Imagenes/hp.webp" <!-- ¡Ruta real de tu imagen! -->
+                    data-model="HIS-32A4NV"
+                    data-brand="hisense"
+                    data-category="Computadoras">
+                    <span class="badge new-badge">NUEVO</span>
+                    <div class="card-header-icons">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\hp.webp" alt="Lapto Dell 11G RAM">
+                    <div class="product-info">
+                        <span class="category-type">Computadoras</span>
+                        <h3>Lapto 16" HD VIDAA/ HIS-32A4NV</h3>
+                        <p class="model-brand">HIS-32A4NV | Marca: HISENSE</p>
+                        <p class="description">Lapto 16" ": con VIDAA, control por voz, conectividad Wi-Fi y diseño compacto. Ideal para cualquier habitación.</p>
+                        <div class="price-section">
+                            <span class="old-price">L 5,995.00</span>
+                            <span class="current-price">L 4,495.00</span>
+                            <span class="discount-tag">-25% | Ahorra L1,500.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox">
+                            <input type="checkbox" id="compare1">
+                            <label for="compare1">Comparar</label>
+                        </div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- EJEMPLO DE PRODUCTO: Componentes Internos - Procesador Intel - PRODUCTO 2 -->
+                <div class="product-card" data-id="p002" data-name="Procesador Intel Core i7-12700K" data-price="8500.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Procesador+Intel" data-category="componentes" data-brand="intel">
+                    <div class="card-header-icons">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\Procesador I7.webp" alt="Procesador Intel Core i7">
+                    <div class="product-info">
+                        <span class="category-type">Componentes Internos</span>
+                        <h3>Procesador Intel Core i7-12700K</h3>
+                        <p class="model-brand">BX8071512700K | Marca: INTEL</p>
+                        <p class="description">Potente procesador Intel de 12ª generación, ideal para gaming y multitareas exigentes. Rendimiento excepcional.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 8,500.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox">
+                            <input type="checkbox" id="compare2">
+                            <label for="compare2">Comparar</label>
+                        </div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- EJEMPLO DE PRODUCTO: Periféricos - Teclado Gamer - PRODUCTO 3 -->
+                <div class="product-card" data-id="p003" data-name="Teclado Mecánico RGB HyperX Alloy" data-price="1999.00" data-old-price="2500.00" data-discount="501.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Teclado+Gamer" data-category="perifericos" data-brand="hyperx">
+                    <span class="badge new-badge">OFERTA</span>
+                    <div class="card-header-icons">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\Teclado.jpeg" alt="Teclado Mecánico RGB">
+                    <div class="product-info">
+                        <span class="category-type">Periféricos</span>
+                        <h3>Teclado Mecánico RGB HyperX Alloy</h3>
+                        <p class="model-brand">HX-KB6RD | Marca: HYPERX</p>
+                        <p class="description">Teclado mecánico para gaming con retroiluminación RGB personalizable y switches Cherry MX.</p>
+                        <div class="price-section">
+                            <span class="old-price">L 2,500.00</span>
+                            <span class="current-price">L 1,999.00</span>
+                            <span class="discount-tag">-20% | Ahorra L501.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox">
+                            <input type="checkbox" id="compare3">
+                            <label for="compare3">Comparar</label>
+                        </div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- EJEMPLO DE PRODUCTO: Accesorios - Auriculares Bluetooth - PRODUCTO 4 -->
+                <div class="product-card" data-id="p004" data-name="Audífonos Bluetooth Sony WH-CH510" data-price="1200.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Audífonos+BT" data-category="accesorios" data-brand="sony">
+                    <div class="card-header-icons">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                        </div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\Audifonos.webp" alt="Audífonos Bluetooth Sony">
+                    <div class="product-info">
+                        <span class="category-type">Accesorios</span>
+                        <h3>Audífonos Bluetooth Sony WH-CH510</h3>
+                        <p class="model-brand">WH-CH510B | Marca: SONY</p>
+                        <p class="description">Audífonos inalámbricos ligeros con hasta 35 horas de batería y llamadas con manos libres.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 1,200.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox">
+                            <input type="checkbox" id="compare4">
+                            <label for="compare4">Comparar</label>
+                        </div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- EJEMPLO DE PRODUCTO: Software - Licencia Windows - PRODUCTO 5 -->
+                <div class="product-card" data-id="p005" data-name="Microsoft Windows 11 Pro" data-price="3200.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Windows+11" data-category="software" data-brand="microsoft">
+                    <span class="badge new-badge">Popular</span>
+                    <div class="card-header-icons">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\Licencia.webp" alt="Licencia Windows 11 Pro">
+                    <div class="product-info">
+                        <span class="category-type">Software</span>
+                        <h3>Microsoft Windows 11 Pro (Licencia Digital)</h3>
+                        <p class="model-brand">FQC-10528 | Marca: MICROSOFT</p>
+                        <p class="description">Licencia original para la última versión de Windows. Mejora tu productividad y seguridad.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 3,200.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox">
+                            <input type="checkbox" id="compare5">
+                            <label for="compare5">Comparar</label>
+                        </div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- EJEMPLO DE PRODUCTO: Suministros de Oficina - Impresora Multifuncional - PRODUCTO 6 -->
+                <div class="product-card" data-id="p006" data-name="Impresora Multifuncional Epson EcoTank L3250" data-price="4800.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Impresora+Epson" data-category="suministros-oficina" data-brand="epson">
+                    <div class="card-header-icons">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\Impresora.jpeg" alt="Impresora Epson EcoTank">
+                    <div class="product-info">
+                        <span class="category-type">Suministros de Oficina</span>
+                        <h3>Impresora Multifuncional Epson EcoTank L3250</h3>
+                        <p class="model-brand">C11CJ67403 | Marca: EPSON</p>
+                        <p class="description">Impresora, copiadora y escáner con sistema de tanques de tinta de alta capacidad.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 4,800.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox">
+                            <input type="checkbox" id="compare6">
+                            <label for="compare6">Comparar</label>
+                        </div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- EJEMPLO DE PRODUCTO: Marcas - Laptop HP - PRODUCTO 7 -->
+                <div class="product-card" data-id="p007" data-name="Laptop HP Pavilion 15-eg0000la" data-price="13500.00" data-old-price="16000.00" data-discount="2500.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Laptop+HP" data-category="laptops" data-brand="hp">
+                    <span class="badge new-badge">Top Ventas</span>
+                    <div class="card-header-icons">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\LaptoHp.webp" alt="Laptop HP Pavilion">
+                    <div class="product-info">
+                        <span class="category-type">Laptops | Marca: HP</span>
+                        <h3>Laptop HP Pavilion 15-eg0000la</h3>
+                        <p class="model-brand">15-EG0000LA | Marca: HP</p>
+                        <p class="description">Laptop delgada y potente con procesador Intel Core i5 y 8GB de RAM, perfecta para el día a día.</p>
+                        <div class="price-section">
+                            <span class="old-price">L 16,000.00</span>
+                            <span class="current-price">L 13,500.00</span>
+                            <span class="discount-tag">-15% | Ahorra L2,500.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox">
+                            <input type="checkbox" id="compare7">
+                            <label for="compare7">Comparar</label>
+                        </div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- EJEMPLO DE PRODUCTO: Relacionado con Servicio Técnico (ej. Software de Diagnóstico) - PRODUCTO 8 -->
+                <div class="product-card" data-id="p008" data-name="Kit de Diagnóstico y Optimización PC" data-price="950.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Software+Diagnóstico" data-category="software" data-brand="techtools">
+                    <span class="badge new-badge">Recomendado</span>
+                    <div class="card-header-icons">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\Kit.png" alt="Software de Diagnóstico PC">
+                    <div class="product-info">
+                        <span class="category-type">Software | Servicio Técnico</span>
+                        <h3>Kit de Diagnóstico y Optimización PC (Licencia)</h3>
+                        <p class="model-brand">SYSOPT-PRO | Marca: TECHTOOLS</p>
+                        <p class="description">Software avanzado para diagnosticar problemas de hardware/software y optimizar el rendimiento de tu PC.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 950.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox">
+                            <input type="checkbox" id="compare8">
+                            <label for="compare8">Comparar</label>
+                        </div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- INICIO DE NUEVOS PRODUCTOS DE SUMINISTROS DE COMPUTADORAS (Actualizados con data-category y data-brand) -->
+
+                <!-- PRODUCTO 9: Memoria RAM DDR4 -->
+                <div class="product-card" data-id="p009" data-name="Memoria RAM Corsair Vengeance LPX 16GB" data-price="2150.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=RAM+DDR4" data-category="componentes" data-brand="corsair">
+                    <span class="badge new-badge">NUEVO</span>
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\RAM.jpeg" alt="Memoria RAM DDR4">
+                    <div class="product-info">
+                        <span class="category-type">Componentes Internos</span>
+                        <h3>Memoria RAM Corsair Vengeance LPX 16GB DDR4 3200MHz</h3>
+                        <p class="model-brand">CMK16GX4M2B3200C16 | Marca: CORSAIR</p>
+                        <p class="description">Módulo de memoria de alto rendimiento para sistemas de escritorio, ideal para gaming y creación de contenido.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 2,150.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare9"><label for="compare9">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 10: SSD NVMe -->
+                <div class="product-card" data-id="p010" data-name="SSD Samsung 970 EVO Plus 1TB NVMe M.2" data-price="3199.00" data-old-price="3800.00" data-discount="601.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=SSD+NVMe" data-category="almacenamiento" data-brand="samsung">
+                    <span class="badge new-badge">OFERTA</span>
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\RAM2.webp" alt="SSD NVMe Samsung">
+                    <div class="product-info">
+                        <span class="category-type">Componentes Internos</span>
+                        <h3>SSD Samsung 970 EVO Plus 1TB NVMe M.2</h3>
+                        <p class="model-brand">MZ-V7S1T0BW | Marca: SAMSUNG</p>
+                        <p class="description">Unidad de estado sólido NVMe ultrarrápida, perfecta para cargar juegos y aplicaciones en segundos.</p>
+                        <div class="price-section">
+                            <span class="old-price">L 3,800.00</span>
+                            <span class="current-price">L 3,199.00</span>
+                            <span class="discount-tag">-16% | Ahorra L601.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare10"><label for="compare10">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 11: Tarjeta Gráfica -->
+                <div class="product-card" data-id="p011" data-name="Tarjeta Gráfica NVIDIA GeForce RTX 3060" data-price="12500.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Tarjeta+Gráfica" data-category="componentes" data-brand="asus">
+                    <span class="badge new-badge">Popular</span>
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\TarjetaGrafica.jpg" alt="Tarjeta Gráfica RTX 3060">
+                    <div class="product-info">
+                        <span class="category-type">Componentes Internos</span>
+                        <h3>Tarjeta Gráfica NVIDIA GeForce RTX 3060</h3>
+                        <p class="model-brand">RTX3060-12G | Marca: ASUS</p>
+                        <p class="description">GPU potente para gaming en 1080p y 1440p, con trazado de rayos y DLSS.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 12,500.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare11"><label for="compare11">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 12: Fuente de Poder -->
+                <div class="product-card" data-id="p012" data-name="Fuente de Poder EVGA 600W" data-price="1850.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Fuente+Poder" data-category="componentes" data-brand="evga">
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\FuentePoder.jpg" alt="Fuente de Poder EVGA">
+                    <div class="product-info">
+                        <span class="category-type">Componentes Internos</span>
+                        <h3>Fuente de Poder EVGA 600W 80 Plus Bronze</h3>
+                        <p class="model-brand">100-BR-0600-K1 | Marca: EVGA</p>
+                        <p class="description">Fuente de alimentación eficiente y confiable para tu PC, con certificación 80 Plus Bronze.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 1,850.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare12"><label for="compare12">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 13: Gabinete PC -->
+                <div class="product-card" data-id="p013" data-name="Gabinete Cooler Master MasterBox Lite 5 RGB" data-price="2300.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Gabinete+PC" data-category="componentes" data-brand="cooler-master">
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\Gabinete.jpeg" alt="Gabinete PC Cooler Master">
+                    <div class="product-info">
+                        <span class="category-type">Componentes Internos</span>
+                        <h3>Gabinete Cooler Master MasterBox Lite 5 RGB</h3>
+                        <p class="model-brand">MCW-L5S3-KGNN-02 | Marca: COOLER MASTER</p>
+                        <p class="description">Gabinete ATX con panel lateral de vidrio templado e iluminación RGB, excelente flujo de aire.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 2,300.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare13"><label for="compare13">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 14: Monitor Gaming -->
+                <div class="product-card" data-id="p014" data-name="Monitor Gaming Acer Nitro VG240Y 23.8" data-price="3999.00" data-old-price="4500.00" data-discount="501.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Monitor+Gaming" data-category="perifericos" data-brand="acer">
+                    <span class="badge new-badge">OFERTA</span>
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\MonitorG.jpg" alt="Monitor Gaming Acer">
+                    <div class="product-info">
+                        <span class="category-type">Periféricos</span>
+                        <h3>Monitor Gaming Acer Nitro VG240Y 23.8" FHD 144Hz</h3>
+                        <p class="model-brand">UM.QV0AA.001 | Marca: ACER</p>
+                        <p class="description">Monitor de alta frecuencia de actualización para una experiencia de juego fluida.</p>
+                        <div class="price-section">
+                            <span class="old-price">L 4,500.00</span>
+                            <span class="current-price">L 3,999.00</span>
+                            <span class="discount-tag">-11% | Ahorra L501.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare14"><label for="compare14">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 15: Mouse Inalámbrico -->
+                <div class="product-card" data-id="p015" data-name="Mouse Inalámbrico Logitech M220 Silent" data-price="350.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Mouse+BT" data-category="perifericos" data-brand="logitech">
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\Mouse.jpeg" alt="Mouse Logitech Inalámbrico">
+                    <div class="product-info">
+                        <span class="category-type">Periféricos</span>
+                        <h3>Mouse Inalámbrico Logitech M220 Silent</h3>
+                        <p class="model-brand">910-004878 | Marca: LOGITECH</p>
+                        <p class="description">Mouse compacto y silencioso, ideal para la oficina o el uso diario.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 350.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare15"><label for="compare15">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 16: Teclado Inalámbrico -->
+                <div class="product-card" data-id="p016" data-name="Teclado Inalámbrico Logitech K400 Plus" data-price="780.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Teclado+BT" data-category="perifericos" data-brand="logitech">
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\Teclado tactil.jpg" alt="Teclado Inalámbrico Logitech">
+                    <div class="product-info">
+                        <span class="category-type">Periféricos</span>
+                        <h3>Teclado Inalámbrico Logitech K400 Plus con Touchpad</h3>
+                        <p class="model-brand">920-007119 | Marca: LOGITECH</p>
+                        <p class="description">Teclado multimedia con touchpad integrado, ideal para controlar tu Smart TV o PC.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 780.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare16"><label for="compare16">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 17: Audífonos Gamer -->
+                <div class="product-card" data-id="p017" data-name="Audífonos HyperX Cloud Stinger Core Gaming" data-price="1400.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Audífonos+Gamer" data-category="accesorios" data-brand="hyperx">
+                    <span class="badge new-badge">Gaming</span>
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\AudifonosB.jpg" alt="Audífonos HyperX Gaming">
+                    <div class="product-info">
+                        <span class="category-type">Accesorios</span>
+                        <h3>Audífonos HyperX Cloud Stinger Core Gaming</h3>
+                        <p class="model-brand">HX-HSCSC-BK | Marca: HYPERX</p>
+                        <p class="description">Audífonos ligeros y cómodos para gaming, con micrófono con cancelación de ruido.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 1,400.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare17"><label for="compare17">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 18: Webcam HD -->
+                <div class="product-card" data-id="p018" data-name="Webcam Logitech C920S HD Pro" data-price="1550.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Webcam+HD" data-category="accesorios" data-brand="logitech">
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\WebCam.webp" alt="Webcam Logitech HD">
+                    <div class="product-info">
+                        <span class="category-type">Accesorios</span>
+                        <h3>Webcam Logitech C920S HD Pro</h3>
+                        <p class="model-brand">960-001257 | Marca: LOGITECH</p>
+                        <p class="description">Webcam Full HD 1080p con enfoque automático y corrección de luz, ideal para videollamadas.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 1,550.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare18"><label for="compare18">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 19: Router Wi-Fi -->
+                <div class="product-card" data-id="p019" data-name="Router TP-Link Archer AX10 WiFi 6" data-price="1900.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Router+WiFi" data-category="conectividad" data-brand="tp-link">
+                    <span class="badge new-badge">Top Ventas</span>
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\router.jpg" alt="Router TP-Link WiFi 6">
+                    <div class="product-info">
+                        <span class="category-type">Conectividad</span>
+                        <h3>Router TP-Link Archer AX10 WiFi 6</h3>
+                        <p class="model-brand">ARCHER AX10 | Marca: TP-LINK</p>
+                        <p class="description">Router Wi-Fi 6 de próxima generación para velocidades ultrarrápidas y mayor capacidad.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 1,900.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare19"><label for="compare19">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 20: Disco Duro Externo -->
+                <div class="product-card" data-id="p020" data-name="Disco Duro Externo Seagate Expansion 2TB" data-price="1999.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=HDD+Externo" data-category="almacenamiento" data-brand="seagate">
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\discoDuro.jpg" alt="Disco Duro Externo Seagate">
+                    <div class="product-info">
+                        <span class="category-type">Almacenamiento</span>
+                        <h3>Disco Duro Externo Seagate Expansion 2TB</h3>
+                        <p class="model-brand">STEA2000400 | Marca: SEAGATE</p>
+                        <p class="description">Almacenamiento portátil de gran capacidad para tus archivos, fotos y videos.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 1,999.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare20"><label for="compare20">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 21: Monitor Curvo Gaming -->
+                <div class="product-card" data-id="p021" data-name="Monitor Curvo Samsung Odyssey G3 27" data-price="5850.00" data-old-price="6500.00" data-discount="650.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Monitor+Curvo" data-category="perifericos" data-brand="samsung">
+                    <span class="badge new-badge">Gaming</span>
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\monitorcurvo.jpg" alt="Monitor Curvo Samsung">
+                    <div class="product-info">
+                        <span class="category-type">Periféricos</span>
+                        <h3>Monitor Curvo Samsung Odyssey G3 27" FHD 144Hz</h3>
+                        <p class="model-brand">LC27G35TFWE | Marca: SAMSUNG</p>
+                        <p class="description">Monitor curvo inmersivo con alta tasa de refresco para una experiencia de juego superior.</p>
+                        <div class="price-section">
+                            <span class="old-price">L 6,500.00</span>
+                            <span class="current-price">L 5,850.00</span>
+                            <span class="discount-tag">-10% | Ahorra L650.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare21"><label for="compare21">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 22: Tarjeta Madre AMD -->
+                <div class="product-card" data-id="p022" data-name="Tarjeta Madre Gigabyte B550M DS3H" data-price="2400.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Tarjeta+Madre+AMD" data-category="componentes" data-brand="gigabyte">
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\tarjetaMadre.jpg" alt="Tarjeta Madre Gigabyte">
+                    <div class="product-info">
+                        <span class="category-type">Componentes Internos</span>
+                        <h3>Tarjeta Madre Gigabyte B550M DS3H Micro ATX</h3>
+                        <p class="model-brand">B550M-DS3H | Marca: GIGABYTE</p>
+                        <p class="description">Placa base AMD AM4 compatible con procesadores Ryzen de última generación.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 2,400.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare22"><label for="compare22">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 23: Procesador AMD Ryzen -->
+                <div class="product-card" data-id="p023" data-name="Procesador AMD Ryzen 7 5800X" data-price="7900.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Ryzen+7" data-category="componentes" data-brand="amd">
+                    <span class="badge new-badge">Rendimiento</span>
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\Ryzen7.png" alt="Procesador AMD Ryzen 7">
+                    <div class="product-info">
+                        <span class="category-type">Componentes Internos</span>
+                        <h3>Procesador AMD Ryzen 7 5800X</h3>
+                        <p class="model-brand">100-100000063WOF | Marca: AMD</p>
+                        <p class="description">Procesador de 8 núcleos y 16 hilos para gaming y creación de contenido profesional.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 7,900.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare23"><label for="compare23">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 24: Tarjeta de Video AMD -->
+                <div class="product-card" data-id="p024" data-name="Tarjeta de Video AMD Radeon RX 6600" data-price="7999.00" data-old-price="9000.00" data-discount="1001.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=AMD+GPU" data-category="componentes" data-brand="sapphire">
+                    <span class="badge new-badge">Gaming</span>
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\tarjetaVideo.jpg" alt="Tarjeta de Video AMD RX 6600">
+                    <div class="product-info">
+                        <span class="category-type">Componentes Internos</span>
+                        <h3>Tarjeta de Video AMD Radeon RX 6600</h3>
+                        <p class="model-brand">RX6600-8G | Marca: SAPPHIRE</p>
+                        <p class="description">Gráficos de alto rendimiento para gaming en 1080p con tecnología RDNA 2.</p>
+                        <div class="price-section">
+                            <span class="old-price">L 9,000.00</span>
+                            <span class="current-price">L 7,999.00</span>
+                            <span class="discount-tag">-11% | Ahorra L1,001.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare24"><label for="compare24">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 25: Memoria RAM DDR5 -->
+                <div class="product-card" data-id="p025" data-name="Memoria RAM G.Skill Trident Z5 RGB 32GB DDR5" data-price="5500.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=RAM+DDR5" data-category="componentes" data-brand="g-skill">
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\memoriaRAM.jpg" alt="Memoria RAM DDR5">
+                    <div class="product-info">
+                        <span class="category-type">Componentes Internos</span>
+                        <h3>Memoria RAM G.Skill Trident Z5 RGB 32GB DDR5 6000MHz</h3>
+                        <p class="model-brand">F5-6000J3038F16GX2-TZ5NR | Marca: G.SKILL</p>
+                        <p class="description">Memoria DDR5 de ultra alta velocidad con iluminación RGB, para rendimiento extremo.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 5,500.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare25"><label for="compare25">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 26: Cooler CPU -->
+                <div class="product-card" data-id="p026" data-name="Cooler para CPU Cooler Master Hyper 212 RGB" data-price="1100.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Cooler+CPU" data-category="componentes" data-brand="cooler-master">
+                    <span class="badge new-badge">Refrigeración</span>
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\Cooler.jpg" alt="Cooler CPU Cooler Master">
+                    <div class="product-info">
+                        <span class="category-type">Componentes Internos</span>
+                        <h3>Cooler para CPU Cooler Master Hyper 212 RGB</h3>
+                        <p class="model-brand">RR-212S-20PC-R1 | Marca: COOLER MASTER</p>
+                        <p class="description">Solución de enfriamiento de CPU con iluminación RGB y excelente disipación de calor.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 1,100.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare26"><label for="compare26">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 27: Silla Gaming -->
+                <div class="product-card" data-id="p027" data-name="Silla Gamer Ergonómica con RGB LED" data-price="4999.00" data-image="https://via.placeholder.com/200x150/f0f0f0/333?text=Silla+Gaming" data-category="accesorios" data-brand="ergotech">
+                    <span class="badge new-badge">Gaming</span>
+                    <div class="card-header-icons">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="far fa-heart favorite-icon"></i>
+                    </div>
+                    <img src="Imagenes\silla.jpeg" alt="Silla Gaming">
+                    <div class="product-info">
+                        <span class="category-type">Accesorios | Muebles</span>
+                        <h3>Silla Gamer Ergonómica con RGB LED</h3>
+                        <p class="model-brand">GAMER-PRO-X | Marca: ERGOTECH</p>
+                        <p class="description">Silla de alta comodidad para largas sesiones de juego, con soporte lumbar y cervical.</p>
+                        <div class="price-section">
+                            <span class="current-price">L 4,999.00</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <div class="compare-checkbox"><input type="checkbox" id="compare27"><label for="compare27">Comparar</label></div>
+                        <button class="btn-add-to-cart">Agregar al Carrito</button>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </main>
+
+    <!-- Overlay y Sidebar de categorías (necesarios para la funcionalidad del botón "Explorar Categorías") -->
+    <div class="sidebar-overlay"></div>
+    <div class="category-sidebar" id="categorySidebar">
+        <!-- Contenido del sidebar (ya te lo di en una respuesta anterior) -->
+        <button class="close-btn">&times;</button>
+        <div class="menu-content">
+            <div class="main-category-column">
+                <h3>Todas las categorías</h3>
+                <ul>
+                    <li><a href="#" class="category-link active-category" data-category="componentes">
+                        <i class="fas fa-microchip"></i> Componentes Internos <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="perifericos">
+                        <i class="fas fa-keyboard"></i> Periféricos <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="accesorios">
+                        <i class="fas fa-headphones-alt"></i> Accesorios <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="software">
+                        <i class="fas fa-box"></i> Software <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="suministros">
+                        <i class="fas fa-print"></i> Suministros de Oficina <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="marcas">
+                        <i class="fas fa-tags"></i> Marcas <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="servicio-tecnico">
+                        <i class="fas fa-wrench"></i> Servicio Técnico <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="subcategory-column">
+                <div id="componentes-content" class="subcategory-content active-content">
+                    <h4>Procesadores</h4>
+                    <ul>
+                        <li><a href="#">Intel</a></li>
+                        <li><a href="#">AMD</a></li>
+                    </ul>
+                    <h4>Tarjetas Madre</h4>
+                    <ul>
+                        <li><a href="#">ATX</a></li>
+                        <li><a href="#">Micro ATX</a></li>
+                        <li><a href="#">Mini ITX</a></li>
+                    </ul>
+                    <h4>Memorias RAM</h4>
+                    <ul>
+                        <li><a href="#">DDR4</a></li>
+                        <li><a href="#">DDR5</a></li>
+                    </ul>
+                    <h4>Almacenamiento</h4>
+                    <ul>
+                        <li><a href="#">SSD</a></li>
+                        <li><a href="#">HDD</a></li>
+                        <li><a href="#">M.2 NVMe</a></li>
+                    </ul>
+                </div>
+                <div id="perifericos-content" class="subcategory-content">
+                    <h4>Teclados</h4>
+                    <ul>
+                        <li><a href="#">Teclados Mecánicos</a></li>
+                        <li><a href="#">Teclados Inalámbricos</a></li>
+                    </ul>
+                    <h4>Mouses</h4>
+                    <ul>
+                        <li><a href="#">Mouses Gaming</a></li>
+                        <li><a href="#">Mouses Ergonómicos</a></li>
+                    </ul>
+                    <h4>Monitores</h4>
+                    <ul>
+                        <li><a href="#">Monitores Gaming</a></li>
+                        <li><a href="#">Monitores Oficina</a></li>
+                    </ul>
+                </div>
+                <div id="accesorios-content" class="subcategory-content">
+                    <h4>Auriculares</h4>
+                    <ul>
+                        <li><a href="#">Auriculares Gaming</a></li>
+                        <li><a href="#">Auriculares Bluetooth</a></li>
+                    </ul>
+                    <h4>Webcams</h4>
+                    <ul>
+                        <li><a href="#">Webcams HD</a></li>
+                        <li><a href="#">Webcams 4K</a></li>
+                    </ul>
+                </div>
+                <div id="software-content" class="subcategory-content">
+                    <h4>Sistemas Operativos</h4>
+                    <ul>
+                        <li><a href="#">Windows</a></li>
+                        <li><a href="#">Licencias Office</a></li>
+                    </ul>
+                    <h4>Antivirus</h4>
+                    <ul>
+                        <li><a href="#">Norton</a></li>
+                        <li><a href="#">Kaspersky</a></li>
+                    </ul>
+                </div>
+                <div id="suministros-content" class="subcategory-content">
+                    <h4>Impresoras</h4>
+                    <ul>
+                        <li><a href="#">Impresoras Láser</a></li>
+                        <li><a href="#">Impresoras de Tinta</a></li>
+                    </ul>
+                    <h4>Cartuchos y Toners</h4>
+                    <ul>
+                        <li><a href="#">HP</a></li>
+                        <li><a href="#">Epson</a></li>
+                    </ul>
+                </div>
+                <div id="marcas-content" class="subcategory-content">
+                    <h4>Nuestras Marcas</h4>
+                    <ul>
+                        <li><a href="#">Dell</a></li>
+                        <li><a href="#">HP</a></li>
+                        <li><a href="#">Lenovo</a></li>
+                        <li><a href="#">Acer</a></li>
+                        <li><a href="#">Samsung</a></li>
+                    </ul>
+                </div>
+                <div id="servicio-tecnico-content" class="subcategory-content">
+                    <h4>Tipos de Servicio</h4>
+                    <ul>
+                        <li><a href="diagnostico-reparacion.html">Diagnóstico y Reparación</a></li>
+                        <li><a href="mantenimiento-preventivo.html">Mantenimiento Preventivo</a></li>
+                        <li><a href="recuperacion-datos.html">Recuperación de Datos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- START: Estructura del Mini-Carrito (AGREGA ESTO) -->
+    <div class="mini-cart-overlay" id="miniCartOverlay"></div>
+    <div class="mini-cart-sidebar" id="miniCartSidebar">
+        <div class="mini-cart-header">
+            <h2>Carrito de compra</h2>
+            <button class="mini-cart-close-btn">&times;</button>
+        </div>
+        <div class="mini-cart-items">
+            <!-- Los ítems del carrito se insertarán aquí por JavaScript -->
+            <!-- Ejemplo de un ítem:
+            <div class="cart-item">
+                <img src="https://via.placeholder.com/80x60" alt="Producto">
+                <div class="item-details">
+                    <span class="item-name">Laptop HP 15"/ Intel Core i5/ 16GB RAM/ 512GB SSD</span>
+                    <span class="item-model">15-FD0059LA</span>
+                    <div class="item-actions">
+                        <div class="quantity-control">
+                            <button class="quantity-minus">-</button>
+                            <span class="item-quantity">1</span>
+                            <button class="quantity-plus">+</button>
+                        </div>
+                        <span class="item-price-original">L18,995.00</span>
+                        <span class="item-price-current">L17,095.50</span>
+                        <button class="item-delete-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div class="discount-coupon-tag">DESCUENTO DE CUPÓN: 10%</div>
+                </div>
+            </div>
+            -->
+            <p class="empty-cart-message" style="text-align: center; color: #888; padding: 20px;">Tu carrito está vacío.</p>
+        </div>
+        <div class="mini-cart-summary">
+            <div class="summary-line"><span>Subtotal:</span> <span id="cartSubtotal">L0.00</span></div>
+            <div class="summary-line"><span>ISV 15%:</span> <span id="cartISV">L0.00</span></div>
+            <div class="summary-line"><span>Descuento:</span> <span id="cartDiscount">L0.00</span></div>
+            <div class="summary-line total-line"><span>Total:</span> <span id="cartTotal">L0.00</span></div>
+        </div>
+        <div class="mini-cart-footer">
+            <button class="btn-checkout">PROCEDER A PAGAR</button>
+            <button class="btn-view-cart" onclick="location.href='carrito.html'">VER CARRITO</button>
+        </div>
+    </div>
+    <!-- END: Estructura del Mini-Carrito -->
+
+    <script src="js/sidebar.js"></script>
+    <script src="js/mini-cart.js"></script>
+    <script src="js/productos-filters.js"></script>
+</body>
+</html> 

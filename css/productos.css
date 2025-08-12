@@ -1,0 +1,266 @@
+/* Contenedor principal de la página de productos */
+.products-page-container {
+    max-width: 1300px; /* Ancho ligeramente mayor para el grid */
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background-color: #f0f2f5; /* Fondo claro como en la imagen, para contrastar con el header */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    color: #333; /* Texto oscuro general */
+}
+
+.products-page-container h1 {
+    text-align: center;
+    color: #333; /* Título principal oscuro */
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.products-page-container .page-intro {
+    text-align: center;
+    color: #555; /* Texto gris para la introducción */
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Grid de productos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Permite 2 o 3 columnas fácilmente */
+    gap: 2rem; /* Espacio entre tarjetas */
+    padding: 1rem;
+}
+
+/* Estilo para cada tarjeta de producto */
+.product-card {
+    background-color: #ffffff; /* Fondo blanco para la tarjeta */
+    border: 1px solid #eee; /* Borde suave */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    position: relative; /* Para posicionar el badge y los íconos */
+    display: flex;
+    flex-direction: column; /* Apila el contenido verticalmente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Badge "NUEVO" */
+.badge.new-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #8a2be2; /* Púrpura como en la imagen */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+/* Contenedor de íconos de rating y favoritos */
+.card-header-icons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+/* Estrellas de rating */
+.rating {
+    color: #ffc107; /* Amarillo para las estrellas */
+    font-size: 1rem;
+}
+
+/* Ícono de favorito (corazón) */
+.favorite-icon {
+    color: #ccc; /* Gris claro por defecto */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.favorite-icon:hover {
+    color: #e30000; /* Rojo al pasar el ratón */
+}
+
+/* Imagen del producto */
+.product-card img {
+    max-width: 100%;
+    height: 180px; /* Altura fija para uniformidad */
+    object-fit: contain;
+    margin: 0 auto 1rem auto; /* Centrar y margen inferior */
+    display: block; /* Asegura que el margen auto funcione */
+}
+
+/* Información del producto */
+.product-info {
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio */
+    padding-top: 10px; /* Espacio para que no se pegue a la imagen */
+}
+
+.product-info .category-type {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.product-info h3 {
+    font-size: 1.5rem;
+    color: #007bff; /* Título del producto azul */
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.product-info .model-brand {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.product-info .description {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* Sección de precios */
+.price-section {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-top: auto; /* Empuja la sección de precio hacia abajo, flex-grow en .product-info ayuda también */
+    margin-bottom: 1.5rem; /* Espacio antes de las acciones */
+}
+
+.price-section .old-price {
+    font-size: 1.1rem;
+    color: #999;
+    text-decoration: line-through; /* Tachado para el precio original */
+    margin-right: 10px;
+}
+
+.price-section .current-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333; /* Precio actual en negro */
+    margin-right: 10px;
+}
+
+.price-section .discount-tag {
+    background-color: #dc3545; /* Rojo para el descuento */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    white-space: nowrap; /* Evita que el texto de descuento se rompa */
+}
+
+/* Contenedor de acciones (Comparar y Agregar al Carrito) */
+.card-actions {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Alinea verticalmente */
+    margin-top: auto; /* Asegura que siempre esté en la parte inferior de la tarjeta */
+    padding-top: 10px; /* Un poco de espacio arriba */
+    border-top: 1px solid #eee; /* Separador */
+}
+
+/* Botón "Agregar al Carrito" */
+.btn-add-to-cart {
+    background-color: #007bff; /* Fondo azul, coherente con el diseño */
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+.btn-add-to-cart:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Checkbox de Comparar */
+.compare-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem; /* Asegura que el texto sea legible */
+}
+
+.compare-checkbox input[type="checkbox"] {
+    margin-right: 8px;
+    /* Puedes estilizar el checkbox si deseas uno personalizado */
+    /* Para asegurar que se ve bien en fondos claros */
+    accent-color: #007bff;
+    width: 18px;
+    height: 18px;
+}
+
+.compare-checkbox label {
+    font-size: 0.95rem;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-page-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    .products-page-container h1 {
+        font-size: 2.5rem;
+    }
+    .products-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        gap: 1rem;
+    }
+    .product-card img {
+        height: 150px;
+    }
+    .product-info h3 {
+        font-size: 1.3rem;
+    }
+    .price-section .current-price {
+        font-size: 1.5rem;
+    }
+    .badge.new-badge,
+    .card-header-icons {
+        font-size: 0.75rem;
+    }
+    .card-actions {
+        flex-direction: column; /* Apilar en pantallas pequeñas */
+        align-items: stretch; /* Estirar elementos a lo ancho */
+        gap: 10px; /* Espacio entre el checkbox y el botón */
+    }
+    .compare-checkbox {
+        justify-content: center; /* Centrar el checkbox */
+    }
+    .btn-add-to-cart {
+        width: 100%; /* Botón ocupa todo el ancho */
+    }
+} 

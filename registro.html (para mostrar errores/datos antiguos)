@@ -1,0 +1,17 @@
+<?php
+session_start();
+if (isset($_SESSION['registration_errors'])) {
+    echo '<div style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px;">';
+    foreach ($_SESSION['registration_errors'] as $error) {
+        echo '<p style="margin: 0;">' . htmlspecialchars($error) . '</p>';
+    }
+    echo '</div>';
+    unset($_SESSION['registration_errors']); // Limpiar los errores después de mostrarlos
+}
+// Para rellenar campos:
+$old_nombre = isset($_SESSION['old_input']['nombre']) ? htmlspecialchars($_SESSION['old_input']['nombre']) : '';
+$old_email = isset($_SESSION['old_input']['email']) ? htmlspecialchars($_SESSION['old_input']['email']) : '';
+unset($_SESSION['old_input']); // Limpiar los datos antiguos
+?>
+    <input type="text" id="nombre" name="nombre" value="<?php echo $old_nombre; ?>" required>
+    <input type="email" id="email" name="email" value="<?php echo $old_email; ?>" required> 

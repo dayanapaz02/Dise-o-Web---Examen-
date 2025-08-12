@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - Suministros Dayana</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ubicacion.css"> <!-- Nuevo archivo CSS para esta página -->
+    <!-- Este enlace es crucial para los íconos del encabezado -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <!-- Barra superior (descuento, estado de orden, soporte, iniciar sesión) -->
+        <div class="header-top-bar">
+            <div class="container">
+                <span class="discount-message">Hasta L10,000 de descuento en tu nuevo smart TV. Compra 👉 <a href="#" class="here-link">aquí.</a></span>
+                <div class="top-links">
+                    <a href="#">Estado de Orden</a>
+                    <a href="#">Soporte</a>
+                    <a href="login.html" class="login-settings">Iniciar Sesión <i class="fas fa-cog"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección principal del header (logo, buscador, íconos de usuario) -->
+        <div class="header-main-section">
+            <div class="container main-content">
+                <div class="logo">
+                    <a href="index.html">BYTE STORE</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-actions">
+                    <a href="login.html" class="action-item">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                    <a href="favotitos.html" class="action-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Favoritos</span>
+                    </a>
+                    <a href="carrito.html" class="action-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Carrito</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de navegación principal (INICIO, MARCAS, PRODUCTOS, etc.) -->
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="marcas.html">MARCAS</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="exclusivos-online.html">EXCLUSIVOS ONLINE</a></li>
+                    <li><a href="credito-bytestore.html">CRÉDITO BYTE STORE</a></li>
+                    <li><a href="servicio-tecnico.html">SERVICIO TÉCNICO</a></li>
+                    <li><a href="ubicacion.html">UBICACIÓN</a></li> <!-- Enlace a esta página -->
+                    <li><a href="blog.html">BLOG</a></li> <!-- Enlace a la página de Blog -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="location-container">
+            <h1>Encuéntranos</h1>
+            <p>Visítanos en nuestra tienda física o contáctanos.</p>
+
+            <div class="map-section">
+                <h2>Nuestra Ubicación</h2>
+                <div class="map-responsive">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.1234567890123!2d-88.0182344!3d14.9836375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f65d7846df8a6db%3A0xaa1172c4ec1a7b11!2sInstituto%20T%C3%A9cnico%20Juan%20Alberto%20Melgar%20Castro!5e0!3m2!1ses!2shn!4v1700000000000!5m2!1ses!2shn"
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="contact-info-section">
+                <h2>Información de Contacto</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Dirección: Instituto Técnico Juan Alberto Melgar Castro, Santa Bárbara, Honduras</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>Teléfono: +504 2234-5678</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>Email: info@suministrosdayana.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Horario: Lunes a Sábado 8:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Puedes añadir un pie de página o scripts si los tienes -->
+</body>
+</html> 

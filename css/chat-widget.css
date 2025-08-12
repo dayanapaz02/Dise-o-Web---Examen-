@@ -1,0 +1,183 @@
+.chat-widget-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chat-widget-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366; /* Verde de WhatsApp */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.chat-widget-button:hover {
+    transform: scale(1.05);
+}
+
+/* Estado cuando el botón debe estar oculto (chat abierto) */
+.chat-widget-button.hidden {
+    opacity: 0;
+    pointer-events: none; /* Deshabilita clics cuando está oculto */
+}
+
+.chat-widget-box {
+    position: fixed;
+    bottom: 90px; /* Por encima del botón flotante oculto */
+    right: 20px;
+    width: 320px; /* Ancho del cuadro de chat */
+    height: 450px; /* Altura del cuadro de chat */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1001;
+    /* Ocultar por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* Estado activo del cuadro de chat */
+.chat-widget-box.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.chat-widget-header {
+    background-color: #075E54; /* Verde oscuro de WhatsApp */
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+.chat-avatar img {
+    border: 2px solid white;
+}
+
+.chat-widget-header .fw-bold {
+    font-size: 1.1em;
+}
+
+.chat-widget-header .small {
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+.chat-widget-header .btn-close {
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+.chat-widget-body {
+    flex-grow: 1;
+    background-color: #e5ddd5; /* Fondo de chat WhatsApp claro */
+    padding: 15px;
+    overflow-y: auto; /* Permite scroll si hay muchos mensajes */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Permite que el texto se rompa en líneas */
+}
+
+.chat-message.incoming {
+    background-color: #fff; /* Mensajes recibidos */
+    align-self: flex-start;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.chat-message.outgoing {
+    background-color: #dcf8c6; /* Mensajes enviados (si los agregaras) */
+    align-self: flex-end;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.chat-message .fw-bold {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    color: #075E54;
+}
+
+.chat-message p {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    color: #333;
+}
+
+.chat-message .small {
+    font-size: 0.75em;
+    color: #888;
+    text-align: right;
+    display: block; /* Para que la hora y el check se pongan abajo */
+}
+
+.chat-widget-footer {
+    padding: 10px 15px;
+    background-color: #f0f0f0; /* Fondo del pie de página */
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.chat-widget-footer input[type="text"] {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Más redondeado */
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.chat-widget-footer .btn-primary.btn-sm {
+    background-color: #128c7e; /* Verde oscuro para el botón de enviar */
+    border-color: #128c7e;
+    border-radius: 50%; /* Botón redondo */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.chat-widget-footer .btn-primary.btn-sm:hover {
+    background-color: #075E54;
+    border-color: #075E54;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 480px) {
+    .chat-widget-box {
+        width: calc(100% - 40px); /* Ocupa casi todo el ancho */
+        right: 20px;
+        bottom: 20px;
+        height: calc(100% - 40px - 70px); /* Ajusta la altura */
+    }
+} 

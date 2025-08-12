@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteStore - Electrónica y Tecnología</title>
+    <!-- FontAwesome (Asegúrate de que es la versión 6.0.0 que hemos estado usando) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/filter-bar.css"> <!-- Si se usa en alguna parte de la página de inicio o se carga globalmente -->
+    <link rel="stylesheet" href="css/mini-cart.css"> <!-- Para el mini-carrito global -->
+    <link rel="stylesheet" href="css/chat-widget.css"> <!-- Para el widget de chat -->
+    <link rel="stylesheet" href="css/home.css"> <!-- Nuevo archivo CSS para estilos específicos del index -->
+
+</head>
+<body style="font-family: 'Inter', Arial, sans-serif;">
+
+    <header class="main-header">
+        <!-- Barra superior (descuento, estado de orden, soporte, iniciar sesión) -->
+        <div class="header-top-bar">
+            <div class="container">
+                <span class="discount-message">Hasta L10,000 de descuento en tu nuevo smart TV. Compra 👉 <a href="#" class="here-link">aquí.</a></span>
+                <div class="top-links">
+                    <a href="#">Estado de Orden</a>
+                    <a href="#">Soporte</a>
+                    <a href="login.html" class="login-settings">Iniciar Sesión <i class="fas fa-cog"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección principal del header (logo, buscador, íconos de usuario) -->
+        <div class="header-main-section">
+            <div class="container main-content">
+                <div class="logo">
+                    <a href="index.html">BYTE STORE</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button type="button"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-actions">
+                    <a href="login.html" class="action-item">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                    <a href="favotitos.html" class="action-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Favoritos</span>
+                    </a>
+                    <a href="carrito.html" class="action-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Carrito</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de navegación principal (INICIO, MARCAS, PRODUCTOS, etc.) -->
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> INICIO</a></li>
+                    <li><a href="marcas.html"><i class="fas fa-tags"></i> MARCAS</a></li>
+                    <li><a href="productos.html"><i class="fas fa-box-open"></i> PRODUCTOS</a></li>
+                    <li><a href="exclusivos-online.html"><i class="fas fa-bolt"></i> EXCLUSIVOS ONLINE</a></li>
+                    <li><a href="credito-bytestore.html"><i class="fas fa-credit-card"></i> CRÉDITO BYTE STORE</a></li>
+                    <li><a href="servicio-tecnico.html"><i class="fas fa-tools"></i> SERVICIO TÉCNICO</a></li>
+                    <li><a href="ubicacion.html"><i class="fas fa-map-marker-alt"></i> UBICACIÓN</a></li>
+                    <li><a href="blog.html"><i class="fas fa-blog"></i> BLOG</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="explore-categories-section">
+            <button class="explore-categories-btn">
+                <i class="fas fa-bars"></i> Explorar Categorías
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN HERO (BANNER PRINCIPAL) -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Tu Destino para la Mejor Tecnología</h1>
+                <p>Descubre las últimas innovaciones en computadoras, periféricos y accesorios.</p>
+                <a href="productos.html" class="btn-hero-shop">Comprar Ahora</a>
+            </div>
+            <!-- La imagen de fondo se maneja con CSS -->
+        </section>
+
+        <!-- SECCIÓN DE CATEGORÍAS DESTACADAS -->
+        <section class="featured-categories">
+            <div class="container">
+                <h2>Categorías Populares</h2>
+                <div class="categories-grid-home">
+                    <a href="productos.html?category=Componentes Internos" class="category-item-home">
+                        <h3><i class="fas fa-microchip"></i> Componentes Internos</h3>
+                        <h4>Componentes Internos</h4>
+                    </a>
+                    <a href="productos.html?category=Periféricos" class="category-item-home">
+                        <h3><i class="fas fa-keyboard"></i> Periféricos</h3>
+                        <h4>Periféricos</h4>
+                    </a>
+                    <a href="productos.html?category=Accesorios" class="category-item-home">
+                        <h3><i class="fas fa-headset"></i> Accesorios</h3>
+                        <h4>Accesorios</h4>
+                    </a>
+                    <a href="productos.html?category=Software" class="category-item-home">
+                        <h3><i class="fas fa-pencil-alt"></i> Software</h3>
+                        <h4>Software</h4>
+                    </a>
+                    <!-- Añade más categorías si lo deseas -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PRODUCTOS DESTACADOS (EJEMPLO) -->
+        <section class="featured-products">
+            <div class="container">
+                <h2>Nuestros Productos Más Vendidos</h2>
+                <div class="products-grid-home">
+                    <!-- Producto 1 (Ejemplo de tarjeta, replicar estructura de productos.html) -->
+                    <div class="product-card-home">
+                        <span class="product-tag new-tag">OFERTA</span>
+                        <img src="Imagenes/Ryzen7.png" alt="Ryzen7Ryzen7">
+                        <div class="product-info-home">
+                            <h3>Ryzen7-12700K</h3>
+                            <div class="rating">
+                                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                                <span class="reviews">(120)</span>
+                            </div>
+                            <div class="prices">
+                                <span class="original-price">$450.00</span>
+                                <span class="discount-price">$399.99</span>
+                            </div>
+                            <button class="btn-add-to-cart-home" data-id="1" data-name="Ryzen7-12700K" data-price="399.99" data-image="Imagenes/componente_intel_i7.jpg">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                    <!-- Producto 2 -->
+                    <div class="product-card-home">
+                        <img src="Imagenes/monitorcurvo.jpg" alt="Monitor LG UltraGear">
+                        <div class="product-info-home">
+                            <h3>Monitor LG UltraGear 27"</h3>
+                            <div class="rating">
+                                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <span class="reviews">(95)</span>
+                            </div>
+                            <div class="prices">
+                                <span class="original-price">$380.00</span>
+                                <span class="discount-price">$349.99</span>
+                            </div>
+                            <button class="btn-add-to-cart-home" data-id="8" data-name="Monitor LG UltraGear 27" data-price="349.99" data-image="Imagenes/periferico_monitor_lg.jpg">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                    <!-- Producto 3 -->
+                    <div class="product-card-home">
+                        <img src="Imagenes/mochila.jpeg" alt="Mochila Laptop Targus">
+                        <div class="product-info-home">
+                            <h3>Mochila para Laptop Targus</h3>
+                            <div class="rating">
+                                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                                <span class="reviews">(70)</span>
+                            </div>
+                            <div class="prices">
+                                <span class="original-price">$65.00</span>
+                                <span class="discount-price">$59.99</span>
+                            </div>
+                            <button class="btn-add-to-cart-home" data-id="28" data-name="Mochila para Laptop Targus" data-price="59.99" data-image="Imagenes/accesorio_mochila_laptop.jpg">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                    <!-- Producto 4 -->
+                    <div class="product-card-home">
+                        <span class="product-tag new-tag">NUEVO</span>
+                        <img src="Imagenes/Teclado tactil.jpg" alt="Teclado Mecánico HyperX">
+                        <div class="product-info-home">
+                            <h3>Teclado HyperX Alloy</h3>
+                            <div class="rating">
+                                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <span class="reviews">(150)</span>
+                            </div>
+                            <div class="prices">
+                                <span class="original-price">$110.00</span>
+                                <span class="discount-price">$99.99</span>
+                            </div>
+                            <button class="btn-add-to-cart-home" data-id="6" data-name="Teclado HyperX Alloy" data-price="99.99" data-image="Imagenes/periferico_teclado_hyperx.jpg">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                    <!-- Agrega más productos aquí si lo deseas, siguiendo la estructura product-card-home -->
+                </div>
+                <div class="text-center mt-4">
+                    <a href="productos.html" class="btn-view-all-products">Ver Todos los Productos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE BIBLIOTECA DE IMÁGENES DE PRODUCTOS -->
+        <section class="product-gallery-section">
+            <div class="container">
+                <h2>Galería de Productos</h2>
+                <p class="gallery-description">Explora nuestra colección completa de productos tecnológicos</p>
+                
+                <div class="product-gallery-grid">
+                    <div class="gallery-item" data-product="Procesador Ryzen 7">
+                        <img src="Imagenes/Ryzen7.png" alt="Procesador Ryzen 7" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Procesador Ryzen 7</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Monitor Curvo">
+                        <img src="Imagenes/monitorcurvo.jpg" alt="Monitor Curvo" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Monitor Curvo</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Tarjeta de Video">
+                        <img src="Imagenes/tarjetaVideo.jpg" alt="Tarjeta de Video" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Tarjeta de Video</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Memoria RAM">
+                        <img src="Imagenes/memoriaRAM.jpg" alt="Memoria RAM" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Memoria RAM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Disco Duro">
+                        <img src="Imagenes/discoDuro.jpg" alt="Disco Duro" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Disco Duro</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Tarjeta Gráfica">
+                        <img src="Imagenes/TarjetaGrafica.jpg" alt="Tarjeta Gráfica" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Tarjeta Gráfica</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Tarjeta Madre">
+                        <img src="Imagenes/tarjetaMadre.jpg" alt="Tarjeta Madre" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Tarjeta Madre</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Fuente de Poder">
+                        <img src="Imagenes/FuentePoder.jpg" alt="Fuente de Poder" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Fuente de Poder</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Cooler">
+                        <img src="Imagenes/Cooler.jpg" alt="Cooler" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Cooler</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Gabinete">
+                        <img src="Imagenes/Gabinete.jpeg" alt="Gabinete" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Gabinete</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Monitor Gaming">
+                        <img src="Imagenes/MonitorG.jpg" alt="Monitor Gaming" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Monitor Gaming</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Laptop HP">
+                        <img src="Imagenes/LaptoHp.webp" alt="Laptop HP" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Laptop HP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Audífonos">
+                        <img src="Imagenes/Audifonos.webp" alt="Audífonos" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Audífonos</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Audífonos Gaming">
+                        <img src="Imagenes/AudifonosB.jpg" alt="Audífonos Gaming" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Audífonos Gaming</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Teclado">
+                        <img src="Imagenes/Teclado.jpeg" alt="Teclado" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Teclado</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Teclado Táctil">
+                        <img src="Imagenes/Teclado tactil.jpg" alt="Teclado Táctil" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Teclado Táctil</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Mouse">
+                        <img src="Imagenes/Mouse.jpeg" alt="Mouse" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Mouse</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="WebCam">
+                        <img src="Imagenes/WebCam.webp" alt="WebCam" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">WebCam</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Mochila">
+                        <img src="Imagenes/mochila.jpeg" alt="Mochila" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Mochila</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Silla Gaming">
+                        <img src="Imagenes/silla.jpeg" alt="Silla Gaming" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Silla Gaming</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Impresora">
+                        <img src="Imagenes/Impresora.jpeg" alt="Impresora" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Impresora</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Router">
+                        <img src="Imagenes/router.jpg" alt="Router" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Router</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Procesador Intel i7">
+                        <img src="Imagenes/Procesador I7.webp" alt="Procesador Intel i7" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Procesador Intel i7</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="RAM DDR4">
+                        <img src="Imagenes/RAM.jpeg" alt="RAM DDR4" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">RAM DDR4</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="RAM Gaming">
+                        <img src="Imagenes/RAM2.webp" alt="RAM Gaming" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">RAM Gaming</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Kit de Herramientas">
+                        <img src="Imagenes/Kit.png" alt="Kit de Herramientas" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Kit de Herramientas</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-product="Licencia de Software">
+                        <img src="Imagenes/Licencia.webp" alt="Licencia de Software" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="product-name">Licencia de Software</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODAL PARA IMAGEN AMPLIADA -->
+        <div id="imageModal" class="image-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img id="modalImage" src="" alt="">
+                <div class="modal-info">
+                    <h3 id="modalProductName"></h3>
+                    <p>Haz clic fuera de la imagen para cerrar</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE BANNERS O LLAMADAS A LA ACCIÓN SECUNDARIAS -->
+        <section class="promo-banners">
+            <div class="container">
+                <div class="banner-item">
+                    <img src="Imagenes/banner.jpg" alt="Crédito Byte Store">
+                    <div class="banner-overlay">
+                        <h3>Financiamiento Flexible</h3>
+                        <p>Compra a cuotas sin complicaciones con Crédito Byte Store.</p>
+                        <a href="credito-bytestore.html" class="btn-banner">Más Información</a>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <img src="Imagenes/banner.jpg" alt="Servicio Técnico">
+                    <div class="banner-overlay">
+                        <h3>Soporte Experto</h3>
+                        <p>Diagnóstico, reparación y mantenimiento para tus equipos.</p>
+                        <a href="servicio-tecnico.html" class="btn-banner">Agenda tu Servicio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Email: info@suministrosdayana.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Suministros Dayana. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Overlay para el fondo cuando el menú lateral está abierto -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- El Menú Lateral de Categorías -->
+    <div class="category-sidebar" id="categorySidebar">
+        <button class="close-btn">&times;</button> <!-- Botón para cerrar el menú -->
+
+        <div class="menu-content">
+            <div class="main-category-column">
+                <h3>Todas las categorías</h3>
+                <ul>
+                    <!-- Cada link de categoría principal tendrá un 'data-category' que coincida con el ID del div de contenido -->
+                    <li><a href="#" class="category-link active-category" data-category="componentes">
+                        <i class="fas fa-microchip"></i> Componentes Internos <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="perifericos">
+                        <i class="fas fa-keyboard"></i> Periféricos <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="accesorios">
+                        <i class="fas fa-headphones-alt"></i> Accesorios <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="software">
+                        <i class="fas fa-box"></i> Software <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="suministros">
+                        <i class="fas fa-print"></i> Suministros de Oficina <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="marcas">
+                        <i class="fas fa-tags"></i> Marcas <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                    <li><a href="#" class="category-link" data-category="servicio-tecnico">
+                        <i class="fas fa-wrench"></i> Servicio Técnico <i class="fas fa-chevron-right ml-auto"></i>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div class="subcategory-column">
+                <!-- Contenido para "Componentes Internos" (activo por defecto) -->
+                <div id="componentes-content" class="subcategory-content active-content">
+                    <h4>Procesadores</h4>
+                    <ul>
+                        <li><a href="#">Intel</a></li>
+                        <li><a href="#">AMD</a></li>
+                    </ul>
+                    <h4>Tarjetas Madre</h4>
+                    <ul>
+                        <li><a href="#">ATX</a></li>
+                        <li><a href="#">Micro ATX</a></li>
+                        <li><a href="#">Mini ITX</a></li>
+                    </ul>
+                    <h4>Memorias RAM</h4>
+                    <ul>
+                        <li><a href="#">DDR4</a></li>
+                        <li><a href="#">DDR5</a></li>
+                    </ul>
+                    <h4>Almacenamiento</h4>
+                    <ul>
+                        <li><a href="#">SSD</a></li>
+                        <li><a href="#">HDD</a></li>
+                        <li><a href="#">M.2 NVMe</a></li>
+                    </ul>
+                    <!-- ... más subcategorías/productos de Componentes Internos ... -->
+                </div>
+
+                <!-- Contenido para "Periféricos" (oculto por defecto) -->
+                <div id="perifericos-content" class="subcategory-content">
+                    <h4>Teclados</h4>
+                    <ul>
+                        <li><a href="#">Teclados Mecánicos</a></li>
+                        <li><a href="#">Teclados Inalámbricos</a></li>
+                    </ul>
+                    <h4>Mouses</h4>
+                    <ul>
+                        <li><a href="#">Mouses Gaming</a></li>
+                        <li><a href="#">Mouses Ergonómicos</a></li>
+                    </ul>
+                    <h4>Monitores</h4>
+                    <ul>
+                        <li><a href="#">Monitores Gaming</a></li>
+                        <li><a href="#">Monitores Oficina</a></li>
+                    </ul>
+                    <!-- ... más subcategorías/productos de Periféricos ... -->
+                </div>
+
+                <!-- Contenido para "Accesorios" (oculto por defecto) -->
+                <div id="accesorios-content" class="subcategory-content">
+                    <h4>Auriculares</h4>
+                    <ul>
+                        <li><a href="#">Auriculares Gaming</a></li>
+                        <li><a href="#">Auriculares Bluetooth</a></li>
+                    </ul>
+                    <h4>Webcams</h4>
+                    <ul>
+                        <li><a href="#">Webcams HD</a></li>
+                        <li><a href="#">Webcams 4K</a></li>
+                    </ul>
+                    <!-- ... más subcategorías/productos de Accesorios ... -->
+                </div>
+
+                <!-- Contenido para "Software" (oculto por defecto) -->
+                <div id="software-content" class="subcategory-content">
+                    <h4>Sistemas Operativos</h4>
+                    <ul>
+                        <li><a href="#">Windows</a></li>
+                        <li><a href="#">Licencias Office</a></li>
+                    </ul>
+                    <h4>Antivirus</h4>
+                    <ul>
+                        <li><a href="#">Norton</a></li>
+                        <li><a href="#">Kaspersky</a></li>
+                    </ul>
+                    <!-- ... más subcategorías/productos de Software ... -->
+                </div>
+
+                <!-- Contenido para "Suministros de Oficina" (oculto por defecto) -->
+                <div id="suministros-content" class="subcategory-content">
+                    <h4>Impresoras</h4>
+                    <ul>
+                        <li><a href="#">Impresoras Láser</a></li>
+                        <li><a href="#">Impresoras de Tinta</a></li>
+                    </ul>
+                    <h4>Cartuchos y Toners</h4>
+                    <ul>
+                        <li><a href="#">HP</a></li>
+                        <li><a href="#">Epson</a></li>
+                    </ul>
+                    <!-- ... más subcategorías/productos de Suministros de Oficina ... -->
+                </div>
+
+                <!-- Contenido para "Marcas" (oculto por defecto) -->
+                <div id="marcas-content" class="subcategory-content">
+                    <h4>Nuestras Marcas</h4>
+                    <ul>
+                        <li><a href="#">Dell</a></li>
+                        <li><a href="#">HP</a></li>
+                        <li><a href="#">Lenovo</a></li>
+                        <li><a href="#">Acer</a></li>
+                        <li><a href="#">Samsung</a></li>
+                    </ul>
+                    <!-- ... más subcategorías/productos de Marcas ... -->
+                </div>
+
+                <!-- Contenido para "Servicio Técnico" (oculto por defecto) -->
+                <div id="servicio-tecnico-content" class="subcategory-content">
+                    <h4>Tipos de Servicio</h4>
+                    <ul>
+                        <li><a href="diagnostico-reparacion.html">Diagnóstico y Reparación</a></li>
+                        <li><a href="mantenimiento-preventivo.html">Mantenimiento Preventivo</a></li>
+                        <li><a href="recuperacion-datos.html">Recuperación de Datos</a></li>
+                    </ul>
+                    <!-- ... más subcategorías/productos de Servicio Técnico ... -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Widget HTML (Mantener al final del body) -->
+    <div class="chat-widget-container">
+        <div class="chat-widget-button" id="openChatBtn">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+
+        <div class="chat-widget-box" id="chatBox">
+            <div class="chat-widget-header bg-success text-white py-2 px-3 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="chat-avatar me-2">
+                        <img src="Imagenes/logo.png" alt="Suministros Dayana Logo" class="rounded-circle" width="40" height="40">
+                    </div>
+                    <div>
+                        <div class="fw-bold">Suministros Dayana</div>
+                        <div class="small">Te responderemos en breve</div>
+                    </div>
+                </div>
+                <button type="button" class="btn-close btn-close-white" aria-label="Close" id="closeChatBtn"></button>
+            </div>
+            <div class="chat-widget-body p-3">
+                <div class="chat-message incoming mb-2 p-2 rounded">
+                    <div class="fw-bold small">Suministros Dayana</div>
+                    <p class="mb-1">¡Hola! 👋 Bienvenido a Suministros Dayana. ¿En qué te podemos ayudar?</p>
+                    <div class="text-end small text-muted">11:38 a. m. <i class="fas fa-check-double"></i></div>
+                </div>
+                <!-- Más mensajes aquí -->
+            </div>
+            <div class="chat-widget-footer border-top p-3 d-flex">
+                <input type="text" class="form-control form-control-sm me-2" placeholder="Escribir mensaje..." aria-label="Escribir mensaje">
+                <button class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS for Chat Widget -->
+    <script src="js/chat-widget.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/mini-cart.js"></script>
+    <script src="js/productos-filters.js"></script> <!-- Necesario para la funcionalidad de filtrar productos por URL -->
+    <script src="js/main.js"></script> <!-- Para cualquier JS adicional de la página de inicio -->
+
+    <!-- JavaScript para la Galería de Productos -->
+    <script>
+        // Funcionalidad del modal de la galería de productos
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalProductName = document.getElementById('modalProductName');
+            const closeModal = document.querySelector('.close-modal');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            // Abrir modal al hacer clic en una imagen
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    const productName = this.getAttribute('data-product');
+                    
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt;
+                    modalProductName.textContent = productName;
+                    
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // Prevenir scroll
+                });
+            });
+
+            // Cerrar modal con el botón X
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restaurar scroll
+            });
+
+            // Cerrar modal al hacer clic fuera de la imagen
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Cerrar modal con la tecla Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Efecto de zoom al pasar el mouse sobre las imágenes
+            galleryItems.forEach(item => {
+                const img = item.querySelector('img');
+                
+                item.addEventListener('mouseenter', function() {
+                    img.style.transform = 'scale(1.05)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    img.style.transform = 'scale(1)';
+                });
+            });
+
+            // Animación de entrada para las imágenes de la galería
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            galleryItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+
+</body>
+</html> 

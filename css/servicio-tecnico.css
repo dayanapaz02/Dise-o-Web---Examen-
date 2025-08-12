@@ -1,0 +1,215 @@
+.card-body i {
+    color: #007bff; /* Color primario de Bootstrap para los íconos */
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Contenedor principal de la página de servicio técnico */
+.servicio-tecnico-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background-color: #222; /* Fondo oscuro, similar al header */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para el contenedor */
+    color: #ffffff; /* Color de texto blanco general */
+}
+
+.servicio-tecnico-container h1 {
+    text-align: center;
+    color: #007bff; /* Título principal azul */
+    margin-bottom: 1.5rem;
+    font-size: 2.8rem;
+}
+
+.servicio-tecnico-container p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ccc; /* Texto gris claro para los párrafos */
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Estilos para las secciones de servicios */
+.service-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 0 1rem;
+}
+
+.service-card {
+    background-color: #333; /* Fondo más oscuro para las tarjetas de servicio */
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background-color: #444; /* Ligeramente más claro al pasar el ratón */
+}
+
+.service-card h3 {
+    color: #ffffff; /* Título de tarjeta blanco */
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: #ddd; /* Texto de descripción de tarjeta */
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-card .btn-service {
+    display: inline-block;
+    background-color: #007bff; /* Botón azul */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.service-card .btn-service:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para la sección de contacto/formulario */
+.contact-section {
+    background-color: #333; /* Fondo para la sección de contacto */
+    padding: 3rem;
+    border-radius: 8px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section h2 {
+    color: #ffffff; /* Título de contacto blanco */
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+}
+
+.service-contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.service-contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #eee; /* Etiquetas de formulario */
+}
+
+/* Reutilizando estilos de inputs de styles.css, pero ajustando para el tema oscuro */
+.service-contact-form input[type="text"],
+.service-contact-form input[type="email"],
+.service-contact-form input[type="tel"],
+.service-contact-form textarea {
+    width: calc(100% - 30px); /* Ajuste por el padding */
+    padding: 12px 15px;
+    border: 1px solid #555;
+    border-radius: 25px; /* Bordes redondeados */
+    background-color: #444; /* Fondo oscuro para los inputs */
+    color: #ffffff; /* Texto blanco en los inputs */
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.service-contact-form input[type="text"]:focus,
+.service-contact-form input[type="email"]:focus,
+.service-contact-form input[type="tel"]:focus,
+.service-contact-form textarea:focus {
+    border-color: #007bff;
+    background-color: #3a3a3a;
+    outline: none;
+}
+
+.service-contact-form input::placeholder,
+.service-contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.service-contact-form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.service-contact-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .service-sections {
+        grid-template-columns: 1fr; /* Apilar tarjetas en una columna */
+    }
+}
+
+@media (max-width: 768px) {
+    .servicio-tecnico-container {
+        margin: 1rem;
+        padding: 20px;
+    }
+    .servicio-tecnico-container h1 {
+        font-size: 2.2rem;
+    }
+    .service-sections {
+        gap: 1.5rem;
+    }
+    .contact-section {
+        padding: 2rem;
+    }
+    .contact-section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .servicio-tecnico-container {
+        padding: 15px;
+    }
+    .service-card {
+        padding: 1.5rem;
+    }
+    .contact-section {
+        padding: 1.5rem;
+    }
+} 

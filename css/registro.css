@@ -1,0 +1,89 @@
+/* Contenedor principal de la página de registro */
+.registro-container {
+    max-width: 500px; /* Un poco más estrecho para formularios */
+    margin: 50px auto; /* Centrar y dar espacio */
+    padding: 30px;
+    background-color: #222; /* Fondo oscuro, similar al header */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #ffffff; /* Color de texto blanco general */
+}
+
+.registro-container h2 {
+    text-align: center;
+    color: #ffffff; /* Título blanco */
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+/* Estilos para los grupos de formulario (label + input) */
+.registro-container .form-group {
+    margin-bottom: 20px;
+}
+
+.registro-container label {
+    display: block; /* Asegura que la etiqueta esté en su propia línea */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #eee; /* Color para las etiquetas */
+}
+
+/* Reutilizando los estilos de input y button de styles.css, pero con ajustes para el tema oscuro */
+.registro-container input[type="text"],
+.registro-container input[type="email"],
+.registro-container input[type="password"] {
+    width: calc(100% - 30px); /* Ajuste por el padding */
+    padding: 12px 15px;
+    border: 1px solid #555; /* Borde más oscuro para los inputs */
+    border-radius: 25px; /* Esquinas redondeadas */
+    background-color: #444; /* Fondo oscuro para los inputs */
+    color: #ffffff; /* Texto blanco en los inputs */
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.registro-container input[type="text"]:focus,
+.registro-container input[type="email"]:focus,
+.registro-container input[type="password"]:focus {
+    border-color: #007bff; /* Borde azul al enfocar */
+    background-color: #3a3a3a; /* Un poco más oscuro al enfocar */
+    outline: none;
+}
+
+.registro-container input::placeholder {
+    color: #aaa; /* Color de placeholder más claro en fondo oscuro */
+}
+
+.registro-container button[type="submit"] {
+    background-color: #007bff; /* Fondo azul para el botón de enviar */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: block; /* Hace que el botón ocupe todo el ancho disponible */
+    width: 100%;
+    margin-top: 20px;
+}
+
+.registro-container button[type="submit"]:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .registro-container {
+        margin: 30px 15px; /* Más espacio a los lados en móviles */
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .registro-container h2 {
+        font-size: 1.8rem;
+    }
+} 

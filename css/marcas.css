@@ -1,0 +1,158 @@
+.marcas-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.marcas-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.marcas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.marca-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.marca-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.marca-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.marca-card h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .marcas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .marca-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .marca-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .marcas-container h1 {
+        font-size: 2rem;
+    }
+
+    .marcas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .marca-card img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.categories-page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.categories-page-container h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: #333;
+    padding: 20px;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.category-card img {
+    width: 150px; /* Tamaño fijo para los logos o íconos de categoría */
+    height: 150px;
+    object-fit: contain; /* Asegura que la imagen se vea completa */
+    margin-bottom: 15px;
+    border-radius: 50%; /* Si quieres que las imágenes sean redondas */
+    border: 2px solid #eee;
+}
+
+.category-card h3 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #007bff; /* Color azul para el título de la categoría */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .category-card img {
+        width: 120px;
+        height: 120px;
+    }
+    .category-card h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .categories-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    }
+    .category-card img {
+        width: 100px;
+        height: 100px;
+    }
+    .category-card h3 {
+        font-size: 1.2em;
+    }
+} 
